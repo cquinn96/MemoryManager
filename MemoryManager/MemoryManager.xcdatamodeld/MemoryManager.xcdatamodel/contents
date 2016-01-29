@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E2705" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Event" syncable="YES">
+        <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Guide" representedClassName="Guide" syncable="YES">
+        <attribute name="guideCreationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="guideDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="guideName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guideReminderOn" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="guideRepeatInterval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guideSnooze" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="guideSound" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Task" inverseName="guide" inverseEntity="Task" syncable="YES"/>
+    </entity>
+    <entity name="Reminder" representedClassName="Reminder" syncable="YES">
+        <attribute name="reminderAudio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reminderDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="reminderName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reminderPicture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reminderRepeatInterval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reminderSnooze" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="reminderSound" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Task" representedClassName="Task" syncable="YES">
+        <attribute name="taskDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="taskID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="taskName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="guide" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Guide" inverseName="tasks" inverseEntity="Guide" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Event" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="Guide" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="Reminder" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="Task" positionX="387" positionY="180" width="128" height="75"/>
+    </elements>
+</model>
